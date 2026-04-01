@@ -35,7 +35,7 @@ export function CustomSparkles({
         top: Math.random() * 100 + "%",
         delay: Math.random() * 2,
         duration: 2 + Math.random() * 1,
-        size: Math.random() * 2 + 1,
+        size: Math.random() * 15 + 1,
       })
     );
     setSparkles(newSparkles);

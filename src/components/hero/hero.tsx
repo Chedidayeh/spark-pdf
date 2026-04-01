@@ -2,27 +2,8 @@
 import { AppStoreButton, GooglePlayButton } from "../base/buttons/app-store-buttons";
 import { TypingAnimation } from "../ui/typing-animation";
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
-import Lottie from "lottie-react";
 
 export function Hero() {
-  const [animations, setAnimations] = useState<{
-    capture: any;
-    sign: any;
-    organize: any;
-  }>({ capture: null, sign: null, organize: null });
-
-  useEffect(() => {
-    const loadAnimations = async () => {
-      const [capture, sign, organize] = await Promise.all([
-        fetch("/animations/capture.json").then((res) => res.json()),
-        fetch("/animations/sign.json").then((res) => res.json()),
-        fetch("/animations/organize.json").then((res) => res.json()),
-      ]);
-      setAnimations({ capture, sign, organize });
-    };
-    loadAnimations();
-  }, []);
   return (
     <div className="grid w-full flex-1 place-items-center p-8">
       {/* <BackgroundBlur className="-top-40 md:-top-0" /> */}
@@ -76,7 +57,7 @@ export function Hero() {
             }}
           >
             <motion.div
-              className="flex flex-col items-center gap-0 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
                 hidden: { opacity: 0, y: 20, scale: 0.95 },
                 visible: {
@@ -91,12 +72,14 @@ export function Hero() {
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Capture & Convert</h4>
               </div>
-              <div className="h-72 w-72">
-                {animations.capture && <Lottie animationData={animations.capture} loop={true} />}
+              <div className="h-54 w-54">
+                <video autoPlay loop muted playsInline className="h-full w-full rounded-2xl object-cover">
+                  <source src="/animations/capture-optimized.mp4" type="video/mp4" />
+                </video>
               </div>
             </motion.div>
             <motion.div
-              className="flex flex-col items-center gap-0 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
                 hidden: { opacity: 0, y: 20, scale: 0.95 },
                 visible: {
@@ -111,12 +94,14 @@ export function Hero() {
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Sign & Edit</h4>
               </div>
-              <div className="h-72 w-72">
-                {animations.sign && <Lottie animationData={animations.sign} loop={true} />}
+              <div className="h-54 w-54">
+                <video autoPlay loop muted playsInline className="h-full w-full rounded-2xl object-cover">
+                  <source src="/animations/sign-optimized.mp4" type="video/mp4" />
+                </video>
               </div>
             </motion.div>
             <motion.div
-              className="flex flex-col items-center gap-0 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
                 hidden: { opacity: 0, y: 20, scale: 0.95 },
                 visible: {
@@ -131,8 +116,16 @@ export function Hero() {
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Organize & Export</h4>
               </div>
-              <div className="h-72 w-72">
-                {animations.organize && <Lottie animationData={animations.organize} loop={true} />}
+              <div className="h-54 w-54">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover rounded-2xl"
+                >
+                  <source src="/animations/organize-optimized.mp4" type="video/mp4" />
+                </video>
               </div>
             </motion.div>
           </motion.div>
@@ -151,10 +144,10 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Try <span className="font-bold">Spark PDF</span> for free now!
+            Try <span className="font-bold">Spark PDF</span> for free now !
           </motion.p>
           <motion.div
-            className="flex flex-col items-center gap-2 md:flex-row"
+            className="flex flex-col items-center gap-8 md:flex-row"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
@@ -162,21 +155,31 @@ export function Hero() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-xl border border-black/20 bg-black/30 p-2"
+              className="rounded-xl border border-black/20 bg-black/30 p-2 px-8"
             >
               <GooglePlayButton size="lg" />
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-xl border border-black/20 bg-black/30 p-2"
+              className="rounded-xl border border-black/20 bg-black/30 p-2 px-8"
             >
               <AppStoreButton size="lg" />
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
-
+      {/* Footer */}
+      <motion.div
+        className="z-10 w-full border-white/10 px-4 pt-8 pb-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-xs text-[#000c51]/80 md:text-sm dark:text-white/60">
+          <p>&copy; {new Date().getFullYear()} ForgeBase. All rights reserved.</p>
+        </div>
+      </motion.div>
     </div>
   );
 }
