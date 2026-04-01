@@ -29,8 +29,8 @@ function compressVideo(inputPath: string, outputPath: string) {
 async function run() {
   try {
     await compressVideo(
-      "../public/animations/organize.mp4",
-      "../public/animations/organize-optimized.mp4"
+      "../public/animations/Scene-3.mp4",
+      "../public/animations/sign-optimized.mp4"
     );
     console.log("🎉 Done!");
   } catch (err) {

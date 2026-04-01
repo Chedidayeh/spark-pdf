@@ -42,7 +42,7 @@ export function Hero() {
         {/* Feature Cards */}
         <div className="mt-6 w-full px-4">
           <motion.div
-            className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3"
+            className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-4"
             initial="hidden"
             animate="visible"
             variants={{
@@ -57,7 +57,7 @@ export function Hero() {
             }}
           >
             <motion.div
-              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
                 hidden: { opacity: 0, y: 20, scale: 0.95 },
                 visible: {
@@ -67,62 +67,98 @@ export function Hero() {
                   transition: { duration: 0.6, ease: "easeOut" },
                 },
               }}
-              whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
             >
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Capture & Convert</h4>
               </div>
-              <div className="h-54 w-54">
-                <video autoPlay loop muted playsInline className="h-full w-full rounded-2xl object-cover">
-                  <source src="/animations/capture-optimized.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </motion.div>
-            <motion.div
-              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
-              variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: { duration: 0.6, ease: "easeOut" },
-                },
-              }}
-              whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
-            >
-              <div className="text-center">
-                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Sign & Edit</h4>
-              </div>
-              <div className="h-54 w-54">
-                <video autoPlay loop muted playsInline className="h-full w-full rounded-2xl object-cover">
-                  <source src="/animations/sign-optimized.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </motion.div>
-            <motion.div
-              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
-              variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: { duration: 0.6, ease: "easeOut" },
-                },
-              }}
-              whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
-            >
-              <div className="text-center">
-                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Organize & Export</h4>
-              </div>
-              <div className="h-54 w-54">
+              <div className="h-44 w-44 will-change-transform">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="h-full w-full object-cover rounded-2xl"
+                  className="h-full w-full rounded-2xl object-cover"
+                >
+                  <source src="/animations/capture-optimized.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </motion.div>
+            <motion.div
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              variants={{
+                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.6, ease: "easeOut" },
+                },
+              }}
+            >
+              <div className="text-center">
+                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Import Stump</h4>
+              </div>
+              <div className="h-44 w-44 will-change-transform">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full rounded-2xl object-cover"
+                >
+                  <source src="/animations/stump-optimized.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </motion.div>
+            <motion.div
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              variants={{
+                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.6, ease: "easeOut" },
+                },
+              }}
+            >
+              <div className="text-center">
+                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Sign & Edit</h4>
+              </div>
+              <div className="h-44 w-44 will-change-transform">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full rounded-2xl object-cover"
+                >
+                  <source src="/animations/sign-optimized.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </motion.div>
+            <motion.div
+              className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+              variants={{
+                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.6, ease: "easeOut" },
+                },
+              }}
+            >
+              <div className="text-center">
+                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Organize & Export</h4>
+              </div>
+              <div className="h-44 w-44 will-change-transform">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full rounded-2xl object-cover"
                 >
                   <source src="/animations/organize-optimized.mp4" type="video/mp4" />
                 </video>
@@ -144,7 +180,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Try <span className="font-bold">Spark PDF</span> for free now !
+            Try <span className="font-bold">Spark PDF</span> now !
           </motion.p>
           <motion.div
             className="flex flex-col items-center gap-8 md:flex-row"

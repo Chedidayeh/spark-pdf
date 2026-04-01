@@ -31,8 +31,8 @@ export function CustomSparkles({
     const newSparkles: Sparkle[] = Array.from({ length: quantity }).map(
       (_, i) => ({
         id: i,
-        left: Math.random() * 100 + "%",
-        top: Math.random() * 100 + "%",
+        left: Math.random() * 110 + "%",
+        top: Math.random() * 110 + "%",
         delay: Math.random() * 2,
         duration: 2 + Math.random() * 1,
         size: Math.random() * 15 + 1,
