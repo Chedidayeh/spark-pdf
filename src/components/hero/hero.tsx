@@ -42,7 +42,7 @@ export function Hero() {
         {/* Feature Cards */}
         <div className="mt-6 w-full px-4">
           <motion.div
-            className="mx-auto grid max-w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+            className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
             initial="hidden"
             animate="visible"
             variants={{
