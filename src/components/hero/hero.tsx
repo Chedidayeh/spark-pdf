@@ -42,7 +42,7 @@ export function Hero() {
         {/* Feature Cards */}
         <div className="mt-6 w-full px-4">
           <motion.div
-            className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-4"
+            className="mx-auto grid max-w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
             initial="hidden"
             animate="visible"
             variants={{
@@ -50,8 +50,8 @@ export function Hero() {
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.12,
-                  delayChildren: 0.3,
+                  staggerChildren: 0.1,
+                  delayChildren: 0.25,
                 },
               },
             }}
@@ -59,19 +59,20 @@ export function Hero() {
             <motion.div
               className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                hidden: { opacity: 0, y: 10, scale: 0.97, rotateY: -5 },
                 visible: {
                   opacity: 1,
                   y: 0,
                   scale: 1,
-                  transition: { duration: 0.6, ease: "easeOut" },
+                  rotateY: 0,
+                  transition: { duration: 0.6, ease: "easeInOut" },
                 },
               }}
             >
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Capture & Convert</h4>
               </div>
-              <div className="h-44 w-44 will-change-transform">
+              <div className="w-full max-w-xl aspect-video will-change-transform">
                 <video
                   autoPlay
                   loop
@@ -86,19 +87,20 @@ export function Hero() {
             <motion.div
               className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                hidden: { opacity: 0, y: 10, scale: 0.97, rotateY: -5 },
                 visible: {
                   opacity: 1,
                   y: 0,
                   scale: 1,
-                  transition: { duration: 0.6, ease: "easeOut" },
+                  rotateY: 0,
+                  transition: { duration: 0.6, ease: "easeInOut" },
                 },
               }}
             >
               <div className="text-center">
-                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Import Stump</h4>
+                <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Scan & Extract</h4>
               </div>
-              <div className="h-44 w-44 will-change-transform">
+              <div className="w-full max-w-xl aspect-video will-change-transform">
                 <video
                   autoPlay
                   loop
@@ -106,26 +108,27 @@ export function Hero() {
                   playsInline
                   className="h-full w-full rounded-2xl object-cover"
                 >
-                  <source src="/animations/stump-optimized.mp4" type="video/mp4" />
+                  <source src="/animations/stamp-optimized.mp4" type="video/mp4" />
                 </video>
               </div>
             </motion.div>
             <motion.div
               className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                hidden: { opacity: 0, y: 10, scale: 0.97, rotateY: -5 },
                 visible: {
                   opacity: 1,
                   y: 0,
                   scale: 1,
-                  transition: { duration: 0.6, ease: "easeOut" },
+                  rotateY: 0,
+                  transition: { duration: 0.6, ease: "easeInOut" },
                 },
               }}
             >
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Sign & Edit</h4>
               </div>
-              <div className="h-44 w-44 will-change-transform">
+              <div className="w-full max-w-xl aspect-video will-change-transform">
                 <video
                   autoPlay
                   loop
@@ -140,19 +143,20 @@ export function Hero() {
             <motion.div
               className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
               variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                hidden: { opacity: 0, y: 10, scale: 0.97, rotateY: -5 },
                 visible: {
                   opacity: 1,
                   y: 0,
                   scale: 1,
-                  transition: { duration: 0.6, ease: "easeOut" },
+                  rotateY: 0,
+                  transition: { duration: 0.6, ease: "easeInOut" },
                 },
               }}
             >
               <div className="text-center">
                 <h4 className="text-base font-semibold text-[#000c51] dark:text-white">Organize & Export</h4>
               </div>
-              <div className="h-44 w-44 will-change-transform">
+              <div className="w-full max-w-xl aspect-video will-change-transform">
                 <video
                   autoPlay
                   loop
