@@ -1,0 +1,87 @@
+Privacy Policy
+Last Updated: April 8, 2026
+
+This Privacy Policy describes how SparkPDF ("we", "us", or "the app"), developed by Forgebase, handles information when you use our mobile application.
+
+SparkPDF is a mobile application that allows you to scan documents, sign and fill PDF files, add signatures, stamps, text, and dates, reorder or delete pages, merge documents, organize files, and export, print, or share your documents.
+
+SparkPDF is designed with a privacy-first approach. All document processing happens directly on your device.
+
+Key privacy facts:
+
+✓ PDF documents are processed locally on your device
+
+✓ Documents are not uploaded to the developer's servers
+
+✓ Your files remain on your device unless you explicitly choose to export, share, or back them up
+
+✓ The developer cannot access your documents
+
+User Accounts
+Creating an account in SparkPDF is optional.
+
+If you choose to create an account, the following information may be collected:
+
+Email address
+Display name or optional profile information you provide
+This information is used only to support account functionality and improve your experience within the app.
+
+Analytics and Diagnostics
+SparkPDF uses analytics and diagnostic tools to help improve the app and ensure reliability. These tools may collect limited technical information such as:
+
+Device type
+Operating system version
+App version
+Usage events within the app
+Crash reports and error diagnostics
+These services may be provided by trusted partners such as Google Firebase.
+
+This information is used only to understand how the app is used and to improve performance and stability. No document contents or file data are collected through these tools.
+
+Premium Features and Purchases
+SparkPDF allows you to scan, sign, fill, organize, and merge PDF documents within the app. However, exporting, printing, or sharing the final document may require a purchase or subscription.
+
+Payments and subscriptions are processed securely through the Apple App Store or Google Play Store. The developer does not collect or store payment card information.
+
+From time to time, you may receive promotional access, coupons, or limited-time trial offers that temporarily unlock premium functionality.
+
+Data Storage
+User files such as PDFs, signatures, and stamps are stored locally on your device.
+
+SparkPDF does not upload your documents to the developer's servers for scanning, signing, filling, merging, organizing, or any other document operation. Your files remain on your device unless you explicitly choose to export, print, share, or back them up using services you control.
+
+Permissions Used by the App
+SparkPDF may request access to certain device features in order to provide its functionality. These permissions may include:
+
+Camera
+Used for scanning documents.
+Photos or Media Library
+Used to import images or documents.
+Files or File Access
+Used to open, import, organize, and save PDF files.
+These permissions are used only to enable app features and can be managed or revoked at any time through your device settings.
+
+Advertising
+SparkPDF does not display advertisements and does not use advertising networks.
+
+Children's Privacy
+SparkPDF is not intended for children under the age of 13. The app does not knowingly collect personal information from children.
+
+If you believe that a child has provided personal information through the app, please contact us so we can take appropriate action.
+
+Data Security
+SparkPDF is designed to protect your privacy. Because document processing occurs locally on your device, your documents are not transmitted to external servers controlled by the developer.
+
+Reasonable measures are taken to protect any information associated with user accounts.
+
+Changes to This Privacy Policy
+This Privacy Policy may be updated from time to time. If changes are made, the "Last Updated" date at the top of this page will be updated accordingly.
+
+We encourage you to review this policy periodically.
+
+Contact
+If you have any questions about this Privacy Policy, you may contact us at:
+
+contact@forgebase.xyz
+
+SparkPDF is developed by Forgebase.

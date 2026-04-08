@@ -1,0 +1,27 @@
+Delete Your Account
+Last Updated: April 8, 2026
+
+If you would like to delete your SparkPDF account, you can request account deletion by following the steps below.
+
+What Gets Deleted
+When your account is deleted, the following data held by SparkPDF will be permanently removed from our systems:
+
+Your email address and profile information
+Account preferences and settings synced to your account
+Any entitlement or promotional records associated with your account
+Please note:
+
+✓ Documents, signatures, and stamps stored locally on your device are not affected by account deletion — they remain on your device
+
+✓ Deleting your SparkPDF account does not cancel any App Store or Google Play subscriptions — those are managed separately by the respective platform
+
+✓ Account deletion is permanent and cannot be undone
+
+How to Request Account Deletion
+To request deletion of your account, send an email to the address below from the email associated with your SparkPDF account:
+
+contact@forgebase.xyz
+
+Subject: SparkPDF Account Deletion Request
+
+We will process your request and complete the deletion of your account within 30 days of receiving it. You will receive a confirmation email once your account has been deleted.
