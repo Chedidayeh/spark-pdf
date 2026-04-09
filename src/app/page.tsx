@@ -1,23 +1,18 @@
-"use client";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { getDevice } from "@/lib/device";
+import Home from "./Home";
+export default async function Page() {
+  const userAgent = (await headers()).get("user-agent") || "";
+  console.log("User Agent:", userAgent);
+  const device = getDevice(userAgent);
 
-import { Hero } from "@/components/hero/hero";
-import { Nav } from "@/components/hero/nav";
-import { CustomSparkles } from "@/components/ui/custom-sparkles";
-import { useTheme } from "next-themes";
+  if (device === "ios") {
+    redirect("https://apps.apple.com");
+  }
 
-export default function Home() {
-  const { theme } = useTheme();
-
-  return (
-    <div className="flex flex-col h-screen w-full relative overflow-hidden">
-      <CustomSparkles
-        color={theme === "dark" ? "#FFFFFF" : "#000000"}
-        quantity={50}
-        className="-z-5"
-      />
-      <Nav />
-      <Hero />
-      {/* <Showcase /> */}
-    </div>
-  );
+  if (device === "android") {
+    redirect("https://play.google.com/store/apps");
+  }
+  return <Home />;
 }
