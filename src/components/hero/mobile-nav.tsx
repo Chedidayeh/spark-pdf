@@ -42,19 +42,27 @@ export function MobileNav({ className }: Props) {
         <div className="bg-background/70 absolute top-14 right-7 left-7 z-50 rounded-2xl border-b border-gray-200 shadow-md backdrop-blur-xl dark:border-gray-800">
           <div className="flex flex-col items-center justify-center gap-2 p-4">
             <Link
-              href="/support"
-              className="rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
-              onClick={() => setIsOpen(false)}
-            >
-              Support
-            </Link>
-            <Link
               href="/privacy"
               className="rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
               onClick={() => setIsOpen(false)}
             >
               Privacy
             </Link>
+            <Link
+              href="/terms"
+              className="rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
+              onClick={() => setIsOpen(false)}
+            >
+              Terms of Service
+            </Link>
+            <Link
+              href="/support"
+              className="rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
+              onClick={() => setIsOpen(false)}
+            >
+              Support
+            </Link>
+
             <Link
               href="/delete-account"
               className="rounded-md px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"

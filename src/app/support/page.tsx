@@ -71,12 +71,6 @@ export default function SupportPage() {
           <p className="pt-4 font-semibold text-[#000c51] dark:text-white">Company Information</p>
           <p>SparkPDF is developed and operated by Forgebase.</p>
 
-          {/* Additional Info */}
-          <p className="pt-4 font-semibold text-[#000c51] dark:text-white">Additional Information</p>
-          <div className="space-y-2 rounded-lg border border-yellow-300 bg-yellow-50 p-4 dark:border-yellow-800 dark:bg-yellow-900/20">
-            <p>SparkPDF offers optional subscriptions that unlock advanced features.</p>
-            <p>Basic app functionality remains available without a subscription.</p>
-          </div>
         </div>
       </motion.div>
     </div>
