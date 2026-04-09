@@ -1,16 +1,14 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { AppStoreButton, GooglePlayButton } from "../base/buttons/app-store-buttons";
 import { TypingAnimation } from "../ui/typing-animation";
 import { motion } from "motion/react";
-import Link from "next/link";
 import lottie from "lottie-web";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function LottieAnimation({ animationPath }: { animationPath: string }) {
   const container = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!container.current) return;
@@ -20,13 +18,29 @@ function LottieAnimation({ animationPath }: { animationPath: string }) {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: animationPath, // <-- use path instead of imported JSON
+      path: animationPath,
     });
 
-    return () => anim.destroy();
+    anim.addEventListener("DOMLoaded", () => {
+      setLoading(false);
+    });
+
+    return () => {
+      anim.removeEventListener("DOMLoaded", () => setLoading(false));
+      anim.destroy();
+    };
   }, [animationPath]);
 
-  return <div ref={container} className="h-full w-full rounded-2xl" />;
+  return (
+    <div className="relative h-full w-full rounded-2xl">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-t-blue-500 border-gray-300"></div>
+        </div>
+      )}
+      <div ref={container} className="h-full w-full" />
+    </div>
+  );
 }
 
 export function Hero() {
@@ -91,7 +105,7 @@ export function Hero() {
                   <h4 className="text-base font-semibold text-[#000c51] dark:text-white">{feature.title}</h4>
                 </div>
                 <div className="w-90 will-change-transform">
-                  <LottieAnimation animationPath={feature.animationPath} />{" "}
+                  <LottieAnimation animationPath={feature.animationPath} />
                 </div>
               </motion.div>
             ))}
@@ -136,29 +150,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Footer */}
-      <motion.div
-        className="z-10 flex w-full items-center justify-between border-white/10 px-4 pt-8 pb-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1 }}
-      >
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-xs text-[#000c51]/80 md:text-sm dark:text-white/60">
-          <p>&copy; {new Date().getFullYear()} ForgeBase. All rights reserved.</p>
-        </div>
-        <div className="mx-auto flex max-w-6xl flex-row items-center gap-6 text-xs text-[#000c51]/80 md:text-sm dark:text-white/60">
-          <Link href="/privacy" className="cursor-pointer transition-colors hover:text-[#000c51] dark:hover:text-white">
-            Privacy Policy
-          </Link>
-          <Link
-            href="/delete-account"
-            className="cursor-pointer transition-colors hover:text-[#000c51] dark:hover:text-white"
-          >
-            Delete Account
-          </Link>
-        </div>
-      </motion.div>
     </div>
   );
 }
