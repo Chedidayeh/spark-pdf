@@ -1,11 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
+import { ChevronLeft } from "lucide-react";
 import { motion } from "motion/react";
-import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/navigation";
 
 export default function PrivacyPage() {
+    const router = useRouter();
+
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-[#0a0a0a]">
       <Head>
@@ -18,13 +21,13 @@ export default function PrivacyPage() {
 
       {/* Header */}
       <div className="sticky top-0 z-20 flex items-center border-b border-[#4E6BFF]/20 bg-white p-4 backdrop-blur-sm dark:bg-[#0a0a0a]">
-        <Link
-          href="/"
-          aria-label="Go back to homepage"
+        <div
           className="rounded-lg border border-[#4E6BFF]/30 px-4 md:px-6 py-2 text-[#000c51] transition-colors hover:bg-[#4E6BFF]/10 dark:text-white"
+          onClick={() => router.back()}
         >
-          Back
-        </Link>
+                    <ChevronLeft size={16} />
+
+        </div>
         <h1 className="absolute left-1/2 -translate-x-1/2 text-lg md:text-xl font-bold text-[#000c51] dark:text-white">
           Privacy Policy
         </h1>

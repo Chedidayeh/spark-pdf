@@ -4,8 +4,12 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/navigation";
+import {  ChevronLeft } from "lucide-react";
 
 export default function SupportPage() {
+  const router = useRouter();
+
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-[#0a0a0a]">
       <Head>
@@ -18,13 +22,13 @@ export default function SupportPage() {
 
       {/* Header */}
       <div className="sticky top-0 z-20 flex items-center border-b border-[#4E6BFF]/20 bg-white p-4 backdrop-blur-sm dark:bg-[#0a0a0a]">
-        <Link
-          href="/"
+        <div
           aria-label="Go back to homepage"
           className="rounded-lg border border-[#4E6BFF]/30 px-4 py-2 text-[#000c51] transition-colors hover:bg-[#4E6BFF]/10 md:px-6 dark:text-white"
+          onClick={() => router.back()}
         >
-          Back
-        </Link>
+          <ChevronLeft size={16} />
+        </div>
         <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-[#000c51] md:text-xl dark:text-white">
           Support
         </h1>
