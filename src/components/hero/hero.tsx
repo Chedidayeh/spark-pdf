@@ -60,12 +60,12 @@ export function Hero() {
 
   return (
     <>
-      {!isLoading && (
+      {isLoading && (
         <div className="bg-background/80 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center gap-3">
               <span
-                className="border-blue-500 h-6 w-6 animate-spin rounded-full border-t-2 border-b-2"
+                className="h-6 w-6 animate-spin rounded-full border-t-2 border-b-2 border-blue-500"
                 aria-hidden="true"
               />
               <span>Loading...</span>
@@ -74,7 +74,7 @@ export function Hero() {
         </div>
       )}
 
-      <div className="grid w-full flex-1 place-items-center p-8">
+      <div className="grid w-full flex-1 place-items-center p-4 sm:p-6 md:p-8">
         {/* Loading Display */}
 
         <div className="relative flex w-full flex-col items-center overflow-hidden rounded-b-3xl bg-gradient-to-b from-white/0 to-white/5 pb-8">
@@ -97,7 +97,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl leading-[1.2] font-bold tracking-tight md:text-5xl">
+            <h1 className="text-2xl leading-[1.2] font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
               <TypingAnimation
                 className="text-[#000c51] dark:text-white"
                 words={["Scan documents in seconds", "Turn paper into clean PDFs"]}
@@ -108,7 +108,7 @@ export function Hero() {
           {/* Feature Cards */}
           <div className="mt-6 w-full px-4">
             <motion.div
-              className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+              className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4"
               initial="hidden"
               animate="visible"
               variants={{
@@ -119,7 +119,7 @@ export function Hero() {
               {features.map((feature, i) => (
                 <motion.div
                   key={i}
-                  className="flex flex-col items-center gap-4 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-4 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8"
+                  className="flex flex-col items-center gap-3 rounded-xl border border-[#4E6BFF]/20 bg-gradient-to-br from-[#4E6BFF]/10 to-[#4E6BFF]/5 p-3 backdrop-blur-md transition-all will-change-transform hover:border-[#4E6BFF]/40 hover:bg-gradient-to-br hover:from-[#4E6BFF]/15 hover:to-[#4E6BFF]/8 sm:p-4"
                   variants={{
                     hidden: { opacity: 0, y: 10, scale: 0.97, rotateY: -5 },
                     visible: {
@@ -132,9 +132,11 @@ export function Hero() {
                   }}
                 >
                   <div className="text-center">
-                    <h4 className="text-base font-semibold text-[#000c51] dark:text-white">{feature.title}</h4>
+                    <h4 className="text-sm font-semibold text-[#000c51] sm:text-base dark:text-white">
+                      {feature.title}
+                    </h4>
                   </div>
-                  <div className="h-50 w-90 will-change-transform">
+                  <div className="h-30 w-50 will-change-transform sm:h-48 sm:w-80 md:h-50 md:w-90">
                     <LottieAnimation animationPath={feature.animationPath} onLoad={handleAnimationLoad} />
                   </div>
                 </motion.div>
@@ -144,21 +146,22 @@ export function Hero() {
 
           {/* Download Buttons */}
           <motion.div
-            className="z-10 flex w-full flex-col items-center justify-center gap-3 px-4 py-8"
+            className="z-10 flex w-full flex-col items-center justify-center gap-6 px-4 py-6 sm:py-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             <motion.p
-              className="md:text-md text-center text-sm font-medium text-[#000c51] dark:text-white"
+              className="text-center text-xs font-medium text-[#000c51] sm:text-sm md:text-base dark:text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               Try <span className="font-bold">Spark PDF</span> now!
             </motion.p>
+
             <motion.div
-              className="flex flex-col items-center gap-8 md:flex-row"
+              className="flex w-full flex-row items-center gap-4 sm:gap-6 md:justify-center md:gap-8"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
@@ -166,16 +169,26 @@ export function Hero() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-xl border border-black/20 bg-black/30 p-2 px-8"
+                className="w-full rounded-xl border border-black/20 bg-black/30 p-2 px-6 sm:w-auto sm:px-8"
               >
-                <GooglePlayButton size="lg" />
+                <div className="md:hidden block">
+                  <GooglePlayButton size="md" />
+                </div>
+                <div className="hidden md:block">
+                  <GooglePlayButton size="lg" />
+                </div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-xl border border-black/20 bg-black/30 p-2 px-8"
+                className="w-full rounded-xl border border-black/20 bg-black/30 p-2 px-6 sm:w-auto sm:px-8"
               >
-                <AppStoreButton size="lg" />
+                <div className="md:hidden block">
+                  <AppStoreButton size="md" />
+                </div>
+                <div className="hidden md:block">
+                  <AppStoreButton size="lg" />
+                </div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -183,26 +196,34 @@ export function Hero() {
 
         {/* Footer */}
         <motion.div
-          className="z-10 flex w-full items-center justify-between border-white/10 px-4 pt-8 pb-4"
+          className="z-10 flex w-full flex-col items-center justify-center gap-4 border-white/10 px-4 pt-6 pb-4 sm:pt-8 md:flex-row md:justify-between"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-xs text-[#000c51]/80 md:text-sm dark:text-white/60">
+          <div className="flex max-w-6xl flex-col items-center gap-3 text-center text-xs text-[#000c51]/80 sm:text-sm md:items-start md:text-left dark:text-white/60">
             <p>&copy; {new Date().getFullYear()} ForgeBase. All rights reserved.</p>
           </div>
-          <div className="mx-auto flex max-w-6xl flex-row items-center gap-6 text-xs text-[#000c51]/80 md:text-sm dark:text-white/60">
+          <div className="flex max-w-6xl flex-col items-center gap-3 text-center text-xs text-[#000c51]/80 sm:flex-row sm:text-sm md:items-end md:text-right dark:text-white/60">
             <Link
               href="/privacy"
               className="cursor-pointer transition-colors hover:text-[#000c51] dark:hover:text-white"
             >
               Privacy Policy
             </Link>
+            <span className="hidden text-[#000c51]/40 sm:inline dark:text-white/20">•</span>
             <Link
               href="/delete-account"
               className="cursor-pointer transition-colors hover:text-[#000c51] dark:hover:text-white"
             >
               Delete Account
+            </Link>
+            <span className="hidden text-[#000c51]/40 sm:inline dark:text-white/20">•</span>
+            <Link
+              href="/support"
+              className="cursor-pointer transition-colors hover:text-[#000c51] dark:hover:text-white"
+            >
+              Support
             </Link>
           </div>
         </motion.div>

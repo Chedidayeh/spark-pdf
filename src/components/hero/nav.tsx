@@ -1,4 +1,5 @@
 import { DesktopNav } from "@/components/hero/desktop-nav";
+import { MobileNav } from "@/components/hero/mobile-nav";
 import { motion } from "motion/react";
 
 export function Nav() {
@@ -9,7 +10,15 @@ export function Nav() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <DesktopNav className="flex" />
+      {/* Desktop Navigation */}
+      <div className="hidden md:block">
+        <DesktopNav className="flex" />
+      </div>
+      
+      {/* Mobile Navigation */}
+      <div className="flex md:hidden">
+        <MobileNav className="flex" />
+      </div>
     </motion.div>
   );
 }

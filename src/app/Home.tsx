@@ -11,7 +11,7 @@ export default function Home() {
   
 
   return (
-    <div className="flex flex-col h-screen w-full relative overflow-hidden">
+    <div className="flex flex-col min-h-screen w-full relative overflow-x-hidden md:h-screen md:overflow-hidden">
       <CustomSparkles
         color={theme === "dark" ? "#FFFFFF" : "#000000"}
         quantity={50}
