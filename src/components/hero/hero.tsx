@@ -105,7 +105,7 @@ export function Hero() {
           </motion.div>
 
           {/* Feature Cards */}
-          <div className="mt-6 w-full md:px-4">
+          <div className="mt-2 md:mt-6 w-full md:px-4">
             <motion.div
               className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:gap-4 md:gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
               initial="hidden"
