@@ -60,7 +60,7 @@ export function Hero() {
 
   return (
     <>
-      {isLoading && (
+      {!isLoading && (
         <div className="bg-background/80 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center gap-3">
