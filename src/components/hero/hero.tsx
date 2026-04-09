@@ -74,8 +74,7 @@ export function Hero() {
         </div>
       )}
 
-      <div className="grid w-full flex-1 place-items-center p-4 sm:p-6 md:p-8">
-        {/* Loading Display */}
+      <div className="grid w-full flex-1 place-items-center p-3 sm:p-6 md:p-8">
 
         <div className="relative flex w-full flex-col items-center overflow-hidden rounded-b-3xl bg-gradient-to-b from-white/0 to-white/5 pb-6 sm:pb-8">
           {/* Gradient Background */}
@@ -106,7 +105,7 @@ export function Hero() {
           </motion.div>
 
           {/* Feature Cards */}
-          <div className="mt-6 w-full px-4">
+          <div className="mt-6 w-full md:px-4">
             <motion.div
               className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:gap-4 md:gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
               initial="hidden"
