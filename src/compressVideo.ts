@@ -1,17 +1,21 @@
 import ffmpeg from "fluent-ffmpeg";
 import ffmpegInstaller from "@ffmpeg-installer/ffmpeg";
+import path from "path";
+import { fileURLToPath } from "url";
 
 ffmpeg.setFfmpegPath(ffmpegInstaller.path);
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 function compressVideo(inputPath: string, outputPath: string) {
+  const resolvedInput = path.resolve(__dirname, inputPath);
+  const resolvedOutput = path.resolve(__dirname, outputPath);
+
   return new Promise((resolve, reject) => {
-    ffmpeg(inputPath)
+    ffmpeg(resolvedInput)
       .videoCodec("libx264")
-      .outputOptions([
-        "-crf 30",
-        "-preset slow",
-        "-movflags +faststart"
-      ])
+      .outputOptions(["-crf 30", "-preset slow", "-movflags +faststart"])
       .noAudio()
       .on("end", () => {
         console.log("✅ Compression finished");
@@ -21,7 +25,7 @@ function compressVideo(inputPath: string, outputPath: string) {
         console.error("❌ Error:", err);
         reject(err);
       })
-      .save(outputPath);
+      .save(resolvedOutput);
   });
 }
 

@@ -46,7 +46,7 @@ export function Hero() {
   const features = [
     { title: "Capture & Convert", animationPath: "/animations/lottie/Scene-1.json" },
     { title: "Scan & Extract", animationPath: "/animations/lottie/Scene-2.json" },
-    { title: "Sign & Edit", animationPath: "/animations/lottie/Scene-3.json" },
+    { title: "Sign & Fill", animationPath: "/animations/lottie/Scene-3.json" },
     { title: "Organize & Export", animationPath: "/animations/lottie/Scene-4.json" },
   ];
 
@@ -164,20 +164,24 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-50 rounded-xl border border-black/20 bg-black/30 p-2 px-6 sm:w-auto sm:px-8"
-              >
-                <GooglePlayButton size="lg" />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-50 rounded-xl border border-black/20 bg-black/30 p-2 px-6 sm:w-auto sm:px-8"
-              >
-                <AppStoreButton size="lg" />
-              </motion.div>
+              <Link href="https://play.google.com/store/apps/details?id=xyz.forgebase.sparkpdf" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-50 rounded-xl border border-black/20 bg-black/30 p-2 px-6 sm:w-auto sm:px-8"
+                >
+                  <GooglePlayButton size="lg" />
+                </motion.div>
+              </Link>
+              <Link href="https://apps.apple.com/us/app/sparkpdf-scan-sign-fill/id6760437092" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-50 rounded-xl border border-black/20 bg-black/30 p-2 px-6 sm:w-auto sm:px-8"
+                >
+                  <AppStoreButton size="lg" />
+                </motion.div>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -192,7 +196,7 @@ export function Hero() {
           <div className="flex max-w-6xl flex-col items-center gap-3 text-center text-xs text-[#000c51]/80 sm:text-sm md:items-start md:text-left dark:text-white/60">
             <p>&copy; {new Date().getFullYear()} ForgeBase. All rights reserved.</p>
           </div>
-          <div className="flex max-w-6xl flex-col items-center gap-3 text-center text-xs text-[#000c51]/80 sm:flex-row sm:text-sm md:items-end md:text-right dark:text-white/60">
+          <div className="flex max-w-6xl flex-row items-center gap-3 text-center text-xs text-[#000c51]/80 sm:text-sm md:items-end md:text-right dark:text-white/60">
             <Link
               href="/privacy"
               className="cursor-pointer transition-colors hover:text-[#000c51] dark:hover:text-white"

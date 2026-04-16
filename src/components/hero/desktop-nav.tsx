@@ -21,17 +21,11 @@ export function DesktopNav({ className }: Props) {
 
   return (
     <nav className={cn("mx-auto flex w-full max-w-7xl items-center justify-between gap-4", className)}>
-<Link href="/">
-  <Image
-    src="/spark_pdf_icon.svg"
-    alt="logo"
-    width={40}
-    height={50}
-    className={brightness}
-  />
-</Link>
+      <Link href="/">
+        <Image src="/spark_pdf_icon.svg" alt="logo" width={40} height={50} className={brightness} />
+      </Link>
 
-      <AnimatedThemeToggler className="border"/>
+      <AnimatedThemeToggler className="border" />
     </nav>
   );
 }

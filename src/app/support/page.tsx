@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
-import {  ChevronLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 
 export default function SupportPage() {
   const router = useRouter();
@@ -60,9 +60,12 @@ export default function SupportPage() {
           {/* Legal */}
           <p className="pt-4 font-semibold text-[#000c51] dark:text-white">Legal</p>
           <div className="space-y-2 rounded-lg border border-gray-300 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900/20">
-            <p>
+            <p className="flex flex-col">
               <Link href="/privacy" className="text-blue-600 hover:underline dark:text-blue-400">
                 Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-blue-600 hover:underline dark:text-blue-400">
+                Terms of Service
               </Link>
             </p>
           </div>
@@ -70,7 +73,6 @@ export default function SupportPage() {
           {/* Company Info */}
           <p className="pt-4 font-semibold text-[#000c51] dark:text-white">Company Information</p>
           <p>SparkPDF is developed and operated by Forgebase.</p>
-
         </div>
       </motion.div>
     </div>
